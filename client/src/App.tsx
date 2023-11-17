@@ -1,36 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
-  const [count, setCount] = useState(0)
+import { WagmiConfig } from 'wagmi'
+import { arbitrum, mainnet } from 'viem/chains'
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1 className="text-primary">Vite + React</h1>
-      <div className="card">
-        <button className="border-2" onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p className="text-lg">
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-        <h1 className="text-xl">Hello Tailwind CSS!</h1>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+import Header from './modules/Header'
+
+import Landpage from './modules/Landpage';
+
+const projectId = process.env.WALLET_ID ?? "undefined"
+
+console.log(projectId)
+
+const metadata = {
+  name: 'Web3Modal',
+  description: 'Web3Modal Example',
+  url: 'https://web3modal.com',
+  icons: ['https://avatars.githubusercontent.com/u/37784886']
 }
 
-export default App
+const chains = [mainnet, arbitrum]
+const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
+
+createWeb3Modal({ wagmiConfig, projectId, chains })
+
+export default function App() {
+  return (
+    <WagmiConfig config={wagmiConfig}>
+		<Header/>
+		<Router>
+            <div className="body">
+                <Routes>
+                    <Route path="/" element={<Landpage/>}/>
+                    {/* <Route path="/dashboard" element={<Dashboard/>}/> */}
+                </Routes>
+            </div>
+        
+
+        </Router>
+    </WagmiConfig>
+  )
+}
