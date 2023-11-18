@@ -12,25 +12,25 @@ function Landpage(props: any) {
     const images = [
         {
           url: 'https://images.unsplash.com/photo-1507427100689-2bf8574e32d4?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-          title: "Dr. Abdullah Abdullah's Presidential Election Campaign",
-          tag: 'Politics',
-          date: '25 May'
+          title: "Build new house for poor people",
+          tag: 'Humanity',
+          date: '25 July'
         },    {
             url: 'https://images.unsplash.com/photo-1605714007165-c15eac9c647b?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njd8fGFzc29jaWF0aW9uJTIwaHVtYW5pdGFyaWFufGVufDB8fDB8fHwy',
-            title: "Dr. Abdullah Abdullah's Presidential Election Campaign",
-            tag: 'Politics',
-            date: '25 May'
+            title: "Doctor of world.",
+            tag: 'Health',
+            date: '17 August'
           },
           {
             url: 'https://images.unsplash.com/photo-1519821172144-4f87d85de2a1?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGZvcmVzdHxlbnwwfHwwfHx8Mg%3D%3D',
-            title: "Dr. Abdullah Abdullah's Presidential Election Campaign",
-            tag: 'Forest',
-            date: '25 May'
+            title: "BIEPA is a local charity protecting nature and the natural environment on Bribie Island, Queensland.",
+            tag: 'Protection',
+            date: '12 September'
           },
           {
             url: 'https://images.unsplash.com/photo-1585119192228-f072c53bc55c?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cG9sbHV0aW9ufGVufDB8fDB8fHwy',
-            title: "Dr. Abdullah Abdullah's Presidential Election Campaign",
-            tag: 'Politics',
+            title: "APPA: Association for the Prevention of Pollution",
+            tag: 'Environment',
             date: '25 May'
           },
       ];
@@ -44,8 +44,8 @@ function Landpage(props: any) {
                     <span className="text-xs bg-primary-600 rounded-full  px-4 py-1.5 mr-3">New</span> <span className="text-sm font-medium">Flowbite is out! See what's new</span> 
                     <svg className="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
                 </a> */}
-                <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">We invest in the world’s <span className="text-green">potential </span></h1>
-                <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+                <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Every penny <span className="text-green">counted</span>, every action <span className="text-green">visible. </span></h1>
+                <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Enlightening the path of generosity with clarity and trust.</p>
                 <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                     <a href="#" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center rounded-lg bg-green text-white">
                         <img src={Love} className="w-5 h-5 mr-3 mt-1"/>

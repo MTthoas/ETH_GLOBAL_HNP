@@ -1,4 +1,4 @@
-import Logo from '../assets/logo.png'
+import Logo from '../assets/logov2.png'
 
 import ConnectButton from './ConnectButton'
 import {useAccount} from "wagmi";
@@ -15,11 +15,11 @@ export default function Header(){
                 <div className="flex lg:flex-1">
                 <Link to="/" className="-m-1.5 p-1.5">
                     <div className="flex pt-3">
-                    <span className="sr-only mt-4">Your Company</span>
+                    <span className="sr-only mt-4">TrueVisions</span>
                     <img className="h-20 w-auto" src={Logo} alt=""/>
                     <div className="flex flex-col">
-                        <span className="text-sm font-semibold leading-5 text-gray-900 mt-5">Your Company</span>
-                        <span className="text-xs font-semibold leading-5 text-gray-500">Lorem ibsum Ouin da</span>
+                        <span className="text-sm font-semibold leading-5 text-gray-900 mt-5">TrueVisions</span>
+                        <span className="text-xs font-semibold leading-5 text-gray-500">Every penny counted, every action visible.</span>
                     </div>
                     </div>
 
