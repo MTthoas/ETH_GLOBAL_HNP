@@ -1,7 +1,6 @@
 import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-
 import { WagmiConfig } from 'wagmi'
 import { arbitrum, mainnet } from 'viem/chains'
 
@@ -15,6 +14,7 @@ import React from "react";
 import {Toaster} from "react-hot-toast";
 import ProjectPage from "./modules/projects/ProjectPage.tsx";
 import ProjectList from './modules/projects/ProjectList';
+import Dashboard from './modules/Dashboard';
 
 const projectId = process.env.WALLET_ID ?? "undefined"
 
@@ -37,7 +37,6 @@ export const API_URL = "http://localhost:3000"
 export default function App() {
     const queryClient = new QueryClient()
 
-
   return (
     <WagmiConfig config={wagmiConfig}>
         <QueryClientProvider client={queryClient}>
@@ -51,6 +50,7 @@ export default function App() {
                     <Route path="/projectList" element={<ProjectList/>}/>
                     <Route path="/project/:id" element={<ProjectPage/>}/>
                     <Route path="/create-project" element={<CreateProject/>}/>
+                    <Route path="/dashboard" element={<Dashboard/>}/>
                     {/* <Route path="/dashboard" element={<Dashboard/>}/> */}
                 </Routes>
             </div>
