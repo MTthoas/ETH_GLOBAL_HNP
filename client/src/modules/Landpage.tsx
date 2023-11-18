@@ -60,7 +60,7 @@ function Landpage(props: any) {
         </section>
 
         <section className="mb-24">
-        <div className="max-w-screen-xl px-5 mx-20">
+        <div className="max-w-screen-xl px-5 mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-5">
             {images.map((image, index) => (
                 <div key={index} className="group relative w-full h-120 flex items-end justify-start text-left bg-cover bg-center" 

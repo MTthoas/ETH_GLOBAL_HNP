@@ -14,6 +14,7 @@ import CreateProject from "./modules/projects/CreateProject.tsx";
 import React from "react";
 import {Toaster} from "react-hot-toast";
 import ProjectPage from "./modules/projects/ProjectPage.tsx";
+import ProjectList from './modules/projects/ProjectList';
 
 const projectId = process.env.WALLET_ID ?? "undefined"
 
@@ -47,6 +48,7 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Landpage/>}/>
                     <Route path="/organization/:id" element={<OrganizationPage/>}/>
+                    <Route path="/projectList" element={<ProjectList/>}/>
                     <Route path="/project/:id" element={<ProjectPage/>}/>
                     <Route path="/create-project" element={<CreateProject/>}/>
                     {/* <Route path="/dashboard" element={<Dashboard/>}/> */}

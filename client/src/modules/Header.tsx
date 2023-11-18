@@ -33,8 +33,8 @@ export default function Header(){
                     </svg>
                 </button>
                 </div>
-                <div className="hidden lg:flex lg:gap-x-12">
-                <div className="relative">
+                <div className="hidden lg:flex lg:gap-x-12 pt-4">
+                {/* <div className="relative">
                     <button type="button" className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900" aria-expanded="false">
                     Lorem
                     <svg className="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -42,11 +42,21 @@ export default function Header(){
                     </svg>
                     </button>
 
-                </div>
+                </div> */}
 
-                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Lorem</a>
-                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Lorem</a>
-                <NavLink to="#" className="text-sm font-semibold leading-6 text-gray-900">Lorem</NavLink>
+                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                    <NavLink to={"/create-project"}>
+                        Create
+                    </NavLink>
+                </a>
+
+                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                    <NavLink to={"/projectList"}>
+                        Projects
+                    </NavLink>
+                </a>
+                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Informations</a>
+                {/* <NavLink to="#" className="text-sm font-semibold leading-6 text-gray-900">Lorem</NavLink> */}
                     {wallet.isConnected && (<NavLink to={"/organization/" + wallet.address}
                                                className="text-sm font-semibold leading-6 text-gray-900">My
                         Organization</NavLink>)}

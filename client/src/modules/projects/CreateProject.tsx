@@ -4,14 +4,18 @@ import {createProject} from "./api.ts";
 import {useNavigate} from "react-router-dom";
 import toast from "react-hot-toast";
 
-const CreateProject = () => {
+
+function CreateProject() {
     // useState for all inputs
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [youtubeVideoId, setYoutubeVideoId] = useState("");
     const [amount, setAmount] = useState(0);
     const address = useAccount().address
+    
     const navigate = useNavigate()
+
+    console.log(address)
 
     const mutation = useMutation({
         mutationFn: () => {
@@ -23,9 +27,12 @@ const CreateProject = () => {
                 organizationAddress: address
             }
 
+            console.log(projectDTO)
+
             return createProject(projectDTO)
         },
         onSuccess: (data) => {
+            console.log("Project created successfully")
             toast.success("Project created successfully")
             navigate("/project/" + data.id)
         },
