@@ -41,14 +41,12 @@ function CreateProject() {
         }
     })
 
-
     return (
-        <div className="max-w-screen-lg mx-auto">
-            <h1 className="text-4xl text-center flex items-center mb-5">Create a project</h1>
-
-
+        <section className="mb-24 px-8">
+        <div className="max-w-screen-xl px-5 mx-auto">
+            <p className="text-xl leading-6 text-gray-900 mt-12 mb-12"> Create a project</p>
             <form>
-                <div className="grid gap-6 mb-6 md:grid-cols-2">
+                <div className="grid gap-6 mb-10 md:grid-cols-2">
                     <div>
                         <label htmlFor="name"
                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name of the
@@ -95,9 +93,8 @@ function CreateProject() {
                     </button>
                 </div>
             </form>
-
-
         </div>
+        </section>
 
     );
 };

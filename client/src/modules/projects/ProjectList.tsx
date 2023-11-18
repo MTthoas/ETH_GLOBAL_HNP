@@ -53,47 +53,28 @@ const ProjectList = () => {
 
     return (
         <div>
-             <section className="mb-24 px-8">
-                <div className="max-w-screen-xl px-5 mx-auto">
-                <p className="text-xl leading-6 text-gray-900 mt-12 mb-6"> List of projects</p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
-                    {projectList.map((image, index) => (
-                        <>
-                        <NavLink to={"/project/" + index}>
-                        <div key={index} className="group relative w-full h-120 flex items-end justify-start text-left bg-cover bg-center" 
-                            style={{ backgroundImage: `url(${image.url})` }}>
-
-                        <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-transparent"></div>
-
-                        <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-800 to-transparent opacity-0 group-hover:opacity-50 transition ease-in-out duration-500"></div>
-                        <div className="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-between items-center">
-                            <div></div>
-                            {/* <a href="#" className="text-xs bg-indigo-600 text-white px-5 py-2 uppercase hover:bg-white hover:text-indigo-600 transition ease-in-out duration-500">{image.tag}</a> */}
-                            <div className="text-white font-regular flex flex-col justify-start">
-                            <span className="text-3xl leading-0 font-semibold">{image.date.split(' ')[0]}</span>
-                            <span className="-mt-3">{image.date.split(' ')[1]}</span>
-                            </div>
-                        </div>
-                        <main className="p-5 z-10">
-                            <a href="#" className="text-md tracking-tight font-medium leading-7 font-regular text-white hover:underline">{image.title}</a>
-                        </main>
-                        </div>
-                        </NavLink>  
-                       </>
-                    ))}
+           <section className="mb-24 px-8">
+        <div className="max-w-screen-xl px-5 mx-auto">
+          <p className="text-xl leading-6 text-gray-900 mt-12 mb-6">Fundraising events</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {projectList.map((project, index) => (
+              <NavLink to={"/project/6"} key={index} className="block">
+                <div className="group relative bg-white rounded-lg shadow-lg overflow-hidden">
+                  <img src={project.url} alt={project.title} className="w-full h-60 object-cover"/>
+                  <div className="p-5">
+                    <p className="text-lg font-semibold text-gray-800">${"100"} of ${"1000"} goal</p>
+                    <div className="w-full bg-gray-light rounded-full h-2.5 dark:bg-gray-700">
+                      <div className="bg-green h-2.5 rounded-full" style={{ width: `${(100 / 1000) * 100}%` }}></div>
                     </div>
+                    <p className="text-gray-600 mt-2">{"1500"} donors</p>
+                    <p className="text-gray-500 mt-4"> Lorem Description loren radd doazda dazdazd cxsqaxs dqazazd</p>
+                  </div>
                 </div>
-                </section>
-                <section className="project px-8">
-                    <div>
-                    {data.map((project) => (
-                        <div key={project.id}>
-                            <h1>{project.name}</h1>
-                            <p>{project.description}</p>
-                        </div>
-                    ))}
-                    </div>
-                </section>
+              </NavLink>
+            ))}
+          </div>
+        </div>
+      </section>
         </div>
     );
 };

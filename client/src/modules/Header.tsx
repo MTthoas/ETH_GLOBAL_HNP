@@ -55,7 +55,13 @@ export default function Header(){
                         Projects
                     </NavLink>
                 </a>
-                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Informations</a>
+
+                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                    <NavLink to={"/dashboard"}>
+                        Dashboard
+                    </NavLink>
+                </a>
+
                 {/* <NavLink to="#" className="text-sm font-semibold leading-6 text-gray-900">Lorem</NavLink> */}
                     {wallet.isConnected && (<NavLink to={"/organization/" + wallet.address}
                                                className="text-sm font-semibold leading-6 text-gray-900">My
