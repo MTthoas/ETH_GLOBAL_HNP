@@ -3,14 +3,15 @@ import {useAccount, useMutation} from "wagmi";
 import {createProject} from "./api.ts";
 import {useNavigate} from "react-router-dom";
 import toast from "react-hot-toast";
+import LoadingButton from "../LoadingButtonà.tsx";
 
 
 function CreateProject() {
-    // useState for all inputs
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
-    const [youtubeVideoId, setYoutubeVideoId] = useState("");
     const [amount, setAmount] = useState(0);
+    const [photo, setPhoto] = useState<File>();
+    const [file, setFile] = useState<File>();
     const address = useAccount().address
     
     const navigate = useNavigate()
@@ -22,9 +23,10 @@ function CreateProject() {
             const projectDTO = {
                 name: name,
                 description: description,
-                youtubeVideoId: youtubeVideoId,
                 amount: amount,
-                organizationAddress: address
+                organizationAddress: address,
+                photo: photo,
+                justification_proof: file
             }
 
             console.log(projectDTO)
@@ -32,7 +34,6 @@ function CreateProject() {
             return createProject(projectDTO)
         },
         onSuccess: (data) => {
-            console.log("Project created successfully")
             toast.success("Project created successfully")
             navigate("/project/" + data.id)
         },
@@ -49,54 +50,71 @@ function CreateProject() {
                 <div className="grid gap-6 mb-10 md:grid-cols-2">
                     <div>
                         <label htmlFor="name"
-                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name of the
+                               className="block mb-2 text-sm font-medium text-gray-900 ">Name of the
                             project</label>
                         <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)}
-                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5   "
                                placeholder="Saving the bees in Madrid" required/>
                     </div>
-                    <div className="col-span-2">
-                        <label htmlFor="description"
-                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Describe Your
-                            Project</label>
-                        <textarea id="description" rows={8} value={description}
-                                  onChange={(e) => setDescription(e.target.value)}
-                                  className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                  required/>
+                    <div className="row-span-3 col-span-1 align-bottom">
+                        {photo != undefined &&
+                            <img src={URL.createObjectURL(photo)} className="object-contain  max-h-60 w-full"/>}
                     </div>
-                    <div>
-                        <label htmlFor="youtubeVideoId"
-                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Youtube Video
-                            for context</label>
-                        <input type="text" id="youtubeVideoId" value={youtubeVideoId}
-                               onChange={(e) => setYoutubeVideoId(e.target.value)}
-                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                               placeholder="Enter a youtube video link providing the context needed"/>
-                    </div>
+
                     <div>
                         <label htmlFor="amount"
-                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Desired
+                               className="block mb-2 text-sm font-medium text-gray-900 ">Desired
                             amount</label>
                         <input type="number" id="amount" value={amount}
                                onChange={(e) => setAmount(parseFloat(e.target.value))}
-                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5   "
                                placeholder="Enter the desired amount you want to receive"/>
+                    </div>
+                    <div><label className="block mb-2 text-sm font-medium text-gray-900"
+                                form="large_size">Upload a picture to show</label>
+                        <input
+                            className="block w-full text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50  focus:outline-none "
+                            id="large_size" type="file" name={"photo"}
+                            onChange={(e) => {
+                                if (e.target.files) {
+                                    setPhoto(e.target.files[0]);
+                                }
+                            }}/>
+                    </div>
+                    <div><label className="block mb-2 text-sm font-medium text-gray-900"
+                                form="large_size">Upload a pdf detailing your needs</label>
+                        <input
+                            className="block w-full text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50  focus:outline-none "
+                            id="large_size" type="file" name="justification_file"
+                            onChange={(e) => {
+                                if (e.target.files) {
+                                    setFile(e.target.files[0]);
+                                }
+                            }}/>
+                    </div>
+
+                    <div className="col-span-2">
+                        <label htmlFor="description"
+                               className="block mb-2 text-sm font-medium text-gray-900 ">Describe Your
+                            Project</label>
+                        <textarea id="description" rows={8} value={description}
+                                  onChange={(e) => setDescription(e.target.value)}
+                                  className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500   "
+                                  required/>
                     </div>
                 </div>
 
                 <div className="pt-3">
-                    <button onClick={(event) => {
+                    <LoadingButton text={"Create"} loading={mutation.isLoading} onClick={(event: any) => {
                         event.preventDefault()
                         mutation.mutate()
-                    }}
-                            className="bg-green text-white rounded-lg px-5 py-2">Create
-                    </button>
+                    }}/>
                 </div>
             </form>
         </div>
         </section>
 
     );
-};
+}
 
 export default CreateProject;

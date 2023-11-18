@@ -26,22 +26,14 @@ const ProjectPage = () => {
   const paragraphs = data.description.split('\n').map((line, index) => (
     <p key={index}>{line}</p>
   ));
-    const image = 
-        {
-          url: 'https://images.unsplash.com/photo-1507427100689-2bf8574e32d4?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-          title: "Dr. Abdullah Abdullah's Presidential Election Campaign",
-          tag: 'Politics',
-          date: '25 May'
-        };
-
     return (
         <div>
             <section className="max-w-screen-xl px-5 mx-auto">
                 <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
 
                 <div className="max-w-screen-xl px-5 mx-auto">
-                    <div className="group relative w-96 h-120 flex items-end justify-start text-left bg-cover bg-center" 
-                            style={{ backgroundImage: `url(${image.url})` }}>
+                    <div className="group relative w-96 h-120 flex items-end justify-start text-left bg-cover bg-center"
+                         style={{backgroundImage: `url(https://gateway.lighthouse.storage/ipfs/${data.photo})`}}>
 
                         <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-transparent"></div>
 
@@ -55,12 +47,14 @@ const ProjectPage = () => {
                         </div>       
                     </div>            
                     <div className="max-w-screen-xl px-5 mx-auto">
-                        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Let's create more tools and ideas that brings us together.</h2>
+                        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">{data.name}</h2>
                         <a> Association : Unicef </a>
-                        <p className="my-6 text-sm">Flowbite helps you connect with friends and communities of people who share your interests. Connecting with your friends and family as well as discovering new ones is easy with features like Groups.</p>
+                        <p className="my-6 text-sm">
+                            {paragraphs}
+                        </p>
                         <div className="group relative bg-white rounded-lg shadow-lg overflow-hidden">
                             <div className="p-5">
-                                <p className="text-lg font-semibold text-gray-800">${"100"} of ${"1000"} goal</p>
+                                <p className="text-lg font-semibold text-gray-800">${"100"} of ${data.amount} goal</p>
                                 <div className="w-full bg-gray-light rounded-full h-2.5 dark:bg-gray-700">
                                 <div className="bg-green h-2.5 rounded-full" style={{ width: `${(100 / 1000) * 100}%` }}></div>
                                 </div>
@@ -156,26 +150,22 @@ const ProjectPage = () => {
                         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" className="px-6 py-3">
-                                    File name
+                                    File
                                 </th>
                                 <th scope="col" className="px-6 py-3">
                                     Size
                                 </th>
-                                {/* <th scope="col" className="px-6 py-3">
-                                    Approvement
-                                </th> */}
+
                                 <th scope="col" className="px-6 py-3">
                                     Approvement
                                 </th>
-                                {/* <th scope="col" className="px-6 py-3">
-                                    <span className="sr-only">Edit</span>
-                                </th> */}
                             </tr>
                         </thead>
                         <tbody>
                             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Bill n°29283
+                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                                    <a href={`https://gateway.lighthouse.storage/ipfs/${data.justification_file_hash}`}
+                                       target={"_blank"}>{`https://gateway.lighthouse.storage/ipfs/${data.justification_file_hash})`}</a>
                                 </th>
                                 <td className="px-6 py-4">
                                     12kb

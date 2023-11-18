@@ -1,6 +1,5 @@
 import axios from "axios";
 import {API_URL} from "../../App.tsx";
-import lighthouse from '@lighthouse-web3/sdk'
 
 export interface Project {
     id: number;
@@ -8,7 +7,8 @@ export interface Project {
     description: string;
     address: string;
     amount: number;
-    youtubeVideoId?: string;
+    photo?: string;
+    justification_file_hash?: string;
     createdAt: Date;
     updatedAt: Date;
 }
@@ -45,16 +45,7 @@ export const getProjectInfos = async (id: string) => {
 
 export const createProject = async (dto: any) => {
 
-    const apiKey = '51cdf183.ae8c99c3250b418092fff0f43ad929d9';
-    const uploadResponse = await lighthouse.upload(
-        '/home/cosmos/Desktop/wow.jpg', 
-        apiKey
-    );
-
-    console.log(uploadResponse)
-
-    
-    const response = await axios.post<Project>(API_URL + '/project', dto);
+    const response = await axios.post<Project>(API_URL + '/project', dto, {headers: {'Content-Type': 'multipart/form-data'} });
 
     return response.data;
 }
