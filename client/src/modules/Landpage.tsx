@@ -3,6 +3,8 @@ import Love from '../assets/love.png'
 
 import { useAccount } from 'wagmi'
 
+import './Landpage';
+
 function Landpage(props: any) {
 
     const { address } = useAccount()
@@ -38,7 +40,7 @@ function Landpage(props: any) {
     return (
         <div>
 
-        <section className="bg-white dark:bg-gray-900">
+        <section className="bg-white dark:bg-gray-900 gradiant">
             <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12 mt-24">
                 {/* <a href="#" className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-12 text-sm text-dark bg-gray-100 rounded-full border " role="alert">
                     <span className="text-xs bg-primary-600 rounded-full  px-4 py-1.5 mr-3">New</span> <span className="text-sm font-medium">Flowbite is out! See what's new</span> 
@@ -49,7 +51,7 @@ function Landpage(props: any) {
                 <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                     <a href="#" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center rounded-lg bg-green text-white">
                         <img src={Love} className="w-5 h-5 mr-3 mt-1"/>
-                         Donation
+                        Support projects
                     </a>  
                     <a href="#" className="inline-flex justify-center items-center py-3 px-5 text-dark border rounded-lg">
                          Learn more

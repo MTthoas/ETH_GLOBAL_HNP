@@ -5,6 +5,8 @@ import { getProjectInfos } from './api';
 import Loading from '../Loading';
 import Love from '../../assets/love.png';
 
+import yellow from '../../assets/yellow.png';
+
 const ProjectPage = () => {
     const { id } = useParams<{ id: string }>();
   const [open, setOpen] = useState(false);
@@ -146,6 +148,59 @@ const ProjectPage = () => {
                 </div>
         
             </section>
+
+
+            <section className="max-w-screen-xl px-5 mx-auto">
+            <div className="max-w-screen-xl px-5 mx-12">
+                    <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" className="px-6 py-3">
+                                    File name
+                                </th>
+                                <th scope="col" className="px-6 py-3">
+                                    Size
+                                </th>
+                                {/* <th scope="col" className="px-6 py-3">
+                                    Approvement
+                                </th> */}
+                                <th scope="col" className="px-6 py-3">
+                                    Approvement
+                                </th>
+                                {/* <th scope="col" className="px-6 py-3">
+                                    <span className="sr-only">Edit</span>
+                                </th> */}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Bill n°29283
+                                </th>
+                                <td className="px-6 py-4">
+                                    12kb
+                                </td>
+                                {/* <td className="px-6 py-4">
+                                    Approved by 12 donators
+                                </td> */}
+                                <td className="px-6 py-4 flex">
+                                    <img src={yellow} className="w-5 h-5 mr-3 "/>
+                                    <a className="mb-1"> Approved by 12 donators </a>
+                                </td>
+                                {/* <td className="py-4">
+                                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline"> Approve </a>
+                                </td> */}
+                                <td className="px-2 py-4 text-right">
+                                <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline px-5"> Approve </a>
+                                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Download</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </section>
+
         </div>
     );
 };
