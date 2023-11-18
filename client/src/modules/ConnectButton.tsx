@@ -29,7 +29,7 @@ const ConnectButton: React.FC = () => {
 
 
   if (loading == true) {
-    return <button className="bg-green text-white px-4 py-2 rounded flex items-center mt-3">
+    return <button className="bg-green text-white px-4 py-2 rounded-lg flex items-center mt-3">
       <div className="animate-spin h-4 w-4 border-2 border-white border-t-transparent mr-2 rounded-full"></div>
       Loading...
     </button>;
@@ -37,7 +37,7 @@ const ConnectButton: React.FC = () => {
 
   if (address) {
     return <div className="flex items-center  mt-3">
-      <button className="bg-green text-white px-4 py-2 rounded flex items-center" onClick={handleConnect}>
+      <button className="bg-green text-white px-4 py-2 rounded-lg flex items-center" onClick={handleConnect}>
         {address.substring(0, 6)}...{address.substring(address.length - 4)}
         <svg className="ml-2 w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
           <path d="M19 9l-7 7-7-7"></path>
@@ -46,7 +46,7 @@ const ConnectButton: React.FC = () => {
     </div>;
   }
 
-  return <button className="bg-green text-white px-4 py-2 rounded mt-3" onClick={handleConnect}>
+  return <button className="bg-green text-white px-4 py-2 rounded-lg mt-3" onClick={handleConnect}>
     Connect to Wallet
   </button>;
 };

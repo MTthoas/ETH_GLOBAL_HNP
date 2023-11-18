@@ -59,7 +59,7 @@ const ProjectList = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {projectList.map((project, index) => (
               <NavLink to={"/project/6"} key={index} className="block">
-                <div className="group relative bg-white rounded-lg shadow-lg overflow-hidden">
+                <div className="group relative bg-white rounded-lg shadow-lg m-2 overflow-hidden">
                   <img src={project.url} alt={project.title} className="w-full h-60 object-cover"/>
                   <div className="p-5">
                     <p className="text-lg font-semibold text-gray-800">${"100"} of ${"1000"} goal</p>

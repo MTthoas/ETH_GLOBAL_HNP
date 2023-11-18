@@ -19,7 +19,7 @@ export default function Header(){
                     <img className="h-20 w-auto" src={Logo} alt=""/>
                     <div className="flex flex-col">
                         <span className="text-sm font-semibold leading-5 text-gray-900 mt-5">TrueVisions</span>
-                        <span className="text-xs font-semibold leading-5 text-gray-500">Every penny counted, every action visible.</span>
+                        <span className="text-xxs leading-5 text-gray-500">Every penny counted, every action visible.</span>
                     </div>
                     </div>
 

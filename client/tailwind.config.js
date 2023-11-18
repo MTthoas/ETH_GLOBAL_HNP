@@ -8,7 +8,10 @@ export default {
     extend: {
       height: {
         "120": '450px'
-      }
+      },
+      fontSize: {
+        'xxs': '.65rem',
+      },
     },
     colors: {
       'blue': '#1fb6ff',
