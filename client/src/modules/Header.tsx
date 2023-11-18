@@ -1,15 +1,19 @@
 import Logo from '../assets/logo.png'
 
 import ConnectButton from './ConnectButton'
+import {useAccount} from "wagmi";
+import {Link, NavLink} from "react-router-dom";
 
 export default function Header(){
+
+    const wallet = useAccount()
 
     return (
         <>
         <header className="bg-white">
             <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
-                <a href="#" className="-m-1.5 p-1.5">
+                <Link to="/" className="-m-1.5 p-1.5">
                     <div className="flex pt-3">
                     <span className="sr-only mt-4">Your Company</span>
                     <img className="h-20 w-auto" src={Logo} alt=""/>
@@ -19,7 +23,7 @@ export default function Header(){
                     </div>
                     </div>
 
-                </a>
+                </Link>
                 </div>
                 <div className="flex lg:hidden">
                 <button type="button" className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
@@ -42,7 +46,10 @@ export default function Header(){
 
                 <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Lorem</a>
                 <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Lorem</a>
-                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Lorem</a>
+                <NavLink to="#" className="text-sm font-semibold leading-6 text-gray-900">Lorem</NavLink>
+                    {wallet.isConnected && (<NavLink to={"/organization/" + wallet.address}
+                                               className="text-sm font-semibold leading-6 text-gray-900">My
+                        Organization</NavLink>)}
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                     <ConnectButton />                

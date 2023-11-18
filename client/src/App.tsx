@@ -8,6 +8,12 @@ import { arbitrum, mainnet } from 'viem/chains'
 import Header from './modules/Header'
 
 import Landpage from './modules/Landpage';
+import OrganizationPage from "./modules/projects/OrganizationPage.tsx";
+import {QueryClient, QueryClientProvider} from "react-query";
+import CreateProject from "./modules/projects/CreateProject.tsx";
+import React from "react";
+import {Toaster} from "react-hot-toast";
+import ProjectPage from "./modules/projects/ProjectPage.tsx";
 
 const projectId = process.env.WALLET_ID ?? "undefined"
 
@@ -25,22 +31,31 @@ const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
 
 createWeb3Modal({ wagmiConfig, projectId, chains })
 
+export const API_URL = "http://localhost:3000"
+
 export default function App() {
+    const queryClient = new QueryClient()
 
 
   return (
     <WagmiConfig config={wagmiConfig}>
-		<Header/>
+        <QueryClientProvider client={queryClient}>
 		<Router>
-            <div className="body">
+            <div className="body mx-auto">
+                <Toaster/>
+                <Header/>
                 <Routes>
                     <Route path="/" element={<Landpage/>}/>
+                    <Route path="/organization/:id" element={<OrganizationPage/>}/>
+                    <Route path="/project/:id" element={<ProjectPage/>}/>
+                    <Route path="/create-project" element={<CreateProject/>}/>
                     {/* <Route path="/dashboard" element={<Dashboard/>}/> */}
                 </Routes>
             </div>
         
 
         </Router>
+        </QueryClientProvider>
     </WagmiConfig>
   )
 }
