@@ -1,5 +1,7 @@
 import Logo from '../assets/logo.png'
 
+import ConnectButton from './ConnectButton'
+
 export default function Header(){
 
     return (
@@ -8,8 +10,15 @@ export default function Header(){
             <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
                 <a href="#" className="-m-1.5 p-1.5">
-                    <span className="sr-only">Your Company</span>
+                    <div className="flex pt-3">
+                    <span className="sr-only mt-4">Your Company</span>
                     <img className="h-20 w-auto" src={Logo} alt=""/>
+                    <div className="flex flex-col">
+                        <span className="text-sm font-semibold leading-5 text-gray-900 mt-5">Your Company</span>
+                        <span className="text-xs font-semibold leading-5 text-gray-500">Lorem ibsum Ouin da</span>
+                    </div>
+                    </div>
+
                 </a>
                 </div>
                 <div className="flex lg:hidden">
@@ -36,7 +45,7 @@ export default function Header(){
                 <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Lorem</a>
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <w3m-button />                
+                    <ConnectButton />                
                 </div>
             </nav>
         </header>

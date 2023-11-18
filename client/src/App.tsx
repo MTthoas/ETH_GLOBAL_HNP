@@ -1,6 +1,7 @@
 import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+
 import { WagmiConfig } from 'wagmi'
 import { arbitrum, mainnet } from 'viem/chains'
 
@@ -25,6 +26,8 @@ const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
 createWeb3Modal({ wagmiConfig, projectId, chains })
 
 export default function App() {
+
+
   return (
     <WagmiConfig config={wagmiConfig}>
 		<Header/>
