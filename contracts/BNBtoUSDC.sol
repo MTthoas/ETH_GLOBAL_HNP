@@ -5,7 +5,7 @@ import "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol";
 import "@chainlink/contracts/src/v0.8/ChainlinkClient.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-contract ConvertBNBToUSDC is ChainlinkClient {
+contract BNBtoUSDC is ChainlinkClient {
     using Chainlink for Chainlink.Request;
 
     IUniswapV2Router02 private uniswapRouter;

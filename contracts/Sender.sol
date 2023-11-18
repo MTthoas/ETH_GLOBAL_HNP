@@ -19,12 +19,12 @@ contract Sender is OwnerIsCreator {
 
     // Event emitted when a message is sent to another chain.
     event MessageSent(
-        bytes32 indexed messageId, // The unique ID of the CCIP message.
-        uint64 indexed destinationChainSelector, // The chain selector of the destination chain.
-        address receiver, // The address of the receiver on the destination chain.
-        string text, // The text being sent.
-        address feeToken, // the token address used to pay CCIP fees.
-        uint256 fees // The fees paid for sending the CCIP message.
+        bytes32 indexed messageId,
+        uint64 indexed destinationChainSelector,
+        address receiver,
+        string text,
+        address feeToken,
+        uint256 fees
     );
 
     IRouterClient private s_router;

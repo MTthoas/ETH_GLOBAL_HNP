@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract BuyETH {
+contract ETHPayment {
     // Événement pour enregistrer les paiements reçus
     event PaymentReceived(address from, uint amount, string paymentId);
 
