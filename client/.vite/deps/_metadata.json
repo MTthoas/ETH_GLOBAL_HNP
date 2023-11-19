@@ -1,0 +1,173 @@
+{
+  "hash": "ef5a8998",
+  "browserHash": "81394be4",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "8e343462",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "db894d6a",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "b375c05c",
+      "needsInterop": true
+    },
+    "@web3modal/wagmi/react": {
+      "src": "../../node_modules/@web3modal/wagmi/dist/esm/exports/react.js",
+      "file": "@web3modal_wagmi_react.js",
+      "fileHash": "0987b06c",
+      "needsInterop": false
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "1dc4da00",
+      "needsInterop": false
+    },
+    "wagmi": {
+      "src": "../../node_modules/wagmi/dist/index.js",
+      "file": "wagmi.js",
+      "fileHash": "421f84ec",
+      "needsInterop": false
+    },
+    "viem/chains": {
+      "src": "../../node_modules/viem/_esm/chains/index.js",
+      "file": "viem_chains.js",
+      "fileHash": "d2807486",
+      "needsInterop": false
+    },
+    "react-query": {
+      "src": "../../node_modules/react-query/es/index.js",
+      "file": "react-query.js",
+      "fileHash": "8324fdb3",
+      "needsInterop": false
+    },
+    "react-hot-toast": {
+      "src": "../../node_modules/react-hot-toast/dist/index.mjs",
+      "file": "react-hot-toast.js",
+      "fileHash": "0cfdc3c8",
+      "needsInterop": false
+    },
+    "react-icons/ai": {
+      "src": "../../node_modules/react-icons/ai/index.esm.js",
+      "file": "react-icons_ai.js",
+      "fileHash": "c677f553",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "8f1f89fe",
+      "needsInterop": false
+    },
+    "ethers": {
+      "src": "../../node_modules/ethers/lib.esm/index.js",
+      "file": "ethers.js",
+      "fileHash": "42195845",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "w3m-modal-SHJZQNFN": {
+      "file": "w3m-modal-SHJZQNFN.js"
+    },
+    "dist-ZUDASNDQ": {
+      "file": "dist-ZUDASNDQ.js"
+    },
+    "dist-2PQHDWSX": {
+      "file": "dist-2PQHDWSX.js"
+    },
+    "dist-JVAMSLEJ": {
+      "file": "dist-JVAMSLEJ.js"
+    },
+    "chunk-G5DSHDNU": {
+      "file": "chunk-G5DSHDNU.js"
+    },
+    "index.es-HCTAAU27": {
+      "file": "index__es-HCTAAU27.js"
+    },
+    "chunk-K26HHXOB": {
+      "file": "chunk-K26HHXOB.js"
+    },
+    "secp256k1-WSFGKZHL": {
+      "file": "secp256k1-WSFGKZHL.js"
+    },
+    "ccip-K3OTU5BE": {
+      "file": "ccip-K3OTU5BE.js"
+    },
+    "ens-OISMTA4G": {
+      "file": "ens-OISMTA4G.js"
+    },
+    "esm-XIQX64KU": {
+      "file": "esm-XIQX64KU.js"
+    },
+    "chunk-QVBIF7LI": {
+      "file": "chunk-QVBIF7LI.js"
+    },
+    "chunk-VAPDPXVB": {
+      "file": "chunk-VAPDPXVB.js"
+    },
+    "chunk-RZQL7WHT": {
+      "file": "chunk-RZQL7WHT.js"
+    },
+    "chunk-RZICIBFF": {
+      "file": "chunk-RZICIBFF.js"
+    },
+    "chunk-IZBDHKJG": {
+      "file": "chunk-IZBDHKJG.js"
+    },
+    "chunk-FLEJTHCN": {
+      "file": "chunk-FLEJTHCN.js"
+    },
+    "chunk-MMJNTKFS": {
+      "file": "chunk-MMJNTKFS.js"
+    },
+    "chunk-TVGVKMHQ": {
+      "file": "chunk-TVGVKMHQ.js"
+    },
+    "chunk-3HTKCOE2": {
+      "file": "chunk-3HTKCOE2.js"
+    },
+    "chunk-3V7TIHOW": {
+      "file": "chunk-3V7TIHOW.js"
+    },
+    "chunk-OCX6ZBZK": {
+      "file": "chunk-OCX6ZBZK.js"
+    },
+    "chunk-PU33QIWG": {
+      "file": "chunk-PU33QIWG.js"
+    },
+    "chunk-LWDAL6LW": {
+      "file": "chunk-LWDAL6LW.js"
+    },
+    "chunk-KPTOZPA2": {
+      "file": "chunk-KPTOZPA2.js"
+    },
+    "chunk-XVXS55ZV": {
+      "file": "chunk-XVXS55ZV.js"
+    },
+    "chunk-ZDM6JSZO": {
+      "file": "chunk-ZDM6JSZO.js"
+    },
+    "chunk-FV3PPQPS": {
+      "file": "chunk-FV3PPQPS.js"
+    },
+    "chunk-QBS3YNFQ": {
+      "file": "chunk-QBS3YNFQ.js"
+    },
+    "chunk-QUQDT3U3": {
+      "file": "chunk-QUQDT3U3.js"
+    },
+    "chunk-XUG3XOB4": {
+      "file": "chunk-XUG3XOB4.js"
+    }
+  }
+}

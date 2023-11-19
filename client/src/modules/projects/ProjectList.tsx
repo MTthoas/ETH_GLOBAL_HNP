@@ -24,13 +24,14 @@ const ProjectList = () => {
                       <div className="group relative bg-white rounded-lg shadow-lg m-2 overflow-hidden">
                           <img src={`https://gateway.lighthouse.storage/ipfs/${project.photo}`} alt={project.name}
                                className="w-full h-60 object-cover"/>
+                          <h1 className="text-xl p-2 mt-2 mx-3 font-extrabold text-gray-800 group-hover:text-blue-500">{project.name}</h1>
                           <div className="p-5">
                               <p className="text-lg font-semibold text-gray-800">${"100"} of ${project.amount} goal</p>
                               <div className="w-full bg-gray-light rounded-full h-2.5 dark:bg-gray-700">
                                   <div className="bg-green h-2.5 rounded-full"
                                        style={{width: `${(100 / project.amount) * 100}%`}}></div>
                               </div>
-                              <p className="text-gray-600 mt-2">{"1500"} donors</p>
+                              <p className="text-gray-600 mt-2">{parseInt((100 / project.amount * 100))+1} donors</p>
                               <p className="text-gray-500 mt-4">{shortenString(project.description, 50)}</p>
                           </div>
                       </div>

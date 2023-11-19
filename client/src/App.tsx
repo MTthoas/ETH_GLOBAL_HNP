@@ -54,7 +54,6 @@ export default function App() {
                     <Route path="/project/:id" element={<ProjectPage/>}/>
                     <Route path="/create-project" element={<CreateProject/>}/>
                     <Route path="/dashboard" element={<Dashboard/>}/>
-                    {/* <Route path="/dashboard" element={<Dashboard/>}/> */}
                 </Routes>
                     </main>
                    <Footers />

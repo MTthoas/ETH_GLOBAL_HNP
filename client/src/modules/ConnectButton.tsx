@@ -15,7 +15,7 @@ const ConnectButton: React.FC = () => {
     }
 
     try {
-      open();
+      open({view:"Networks"});
     } catch (error) {
       console.error(error);
     }

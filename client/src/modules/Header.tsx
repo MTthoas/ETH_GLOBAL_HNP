@@ -44,11 +44,11 @@ export default function Header(){
 
                 </div> */}
 
-                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                    <NavLink to={"/create-project"}>
-                        Create
-                    </NavLink>
-                </a>
+                    {wallet.isConnected && (<a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                        <NavLink to={"/create-project"}>
+                            Create
+                        </NavLink>
+                    </a>)}
 
                 <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
                     <NavLink to={"/projectList"}>
