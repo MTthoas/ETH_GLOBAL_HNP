@@ -2,7 +2,7 @@ import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { WagmiConfig } from 'wagmi'
-import { arbitrum, mainnet } from 'viem/chains'
+import { arbitrum, mainnet, sepolia, polygonMumbai} from 'viem/chains'
 
 import Header from './modules/Header'
 
@@ -28,7 +28,7 @@ const metadata = {
   icons: ['https://avatars.githubusercontent.com/u/37784886']
 }
 
-const chains = [mainnet, arbitrum]
+const chains = [mainnet, sepolia, arbitrum, polygonMumbai]
 const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
 
 createWeb3Modal({ wagmiConfig, projectId, chains })
