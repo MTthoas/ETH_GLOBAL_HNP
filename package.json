@@ -16,15 +16,6 @@
   },
   "homepage": "https://github.com/NomicFoundation/hardhat-boilerplate#readme",
   "devDependencies": {
-<<<<<<< HEAD
-    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
-    "@nomiclabs/hardhat-ethers": "^2.2.3",
-    "@nomiclabs/hardhat-waffle": "^2.0.6",
-    "chai": "^4.3.10",
-    "ethereum-waffle": "^4.0.10",
-    "ethers": "^5.7.2",
-    "hardhat": "^2.19.1"
-=======
     "@chainlink/contracts-ccip": "^0.7.6",
     "@ethersproject/abi": "^5.7.0",
     "@ethersproject/providers": "^5.7.2",
@@ -38,7 +29,6 @@
     "hardhat": "^2.12.5",
     "hardhat-gas-reporter": "^1.0.9",
     "solidity-coverage": "^0.8.2"
->>>>>>> origin/develop
   },
   "dependencies": {
     "dotenv": "^16.3.1"
