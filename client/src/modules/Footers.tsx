@@ -2,8 +2,8 @@ import React from 'react';
 
 const Footers = () => {
     return (
-<footer className="bg-white rounded-lg shadow sm:flex sm:items-center sm:justify-between p-4 sm:p-6 xl:p-8 dark:bg-gray-800 antialiased">
-  <p className="mb-4 text-sm text-center text-gray-500 dark:text-gray-400 sm:mb-0">
+        <footer className="bg-white rounded-lg shadow sm:flex sm:items-center sm:justify-between p-4 sm:p-6 xl:p-8 dark:bg-gray-800 antialiased mt-auto">
+              <p className="mb-4 text-sm text-center text-gray-500 dark:text-gray-400 sm:mb-0">
       &copy; 2023-2023 <a href="https://Truevisions.com" className="hover:underline" target="_blank">Truevisions.com</a>. All rights reserved.
   </p>
   <div className="flex justify-center items-center space-x-1">
