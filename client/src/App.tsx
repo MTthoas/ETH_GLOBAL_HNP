@@ -43,7 +43,8 @@ export default function App() {
     <WagmiConfig config={wagmiConfig}>
         <QueryClientProvider client={queryClient}>
 		    <Router>
-            <div className="body mx-auto">
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+          <main style={{ flex: '1' }}>
                 <Toaster/>
                 <Header/>
                 <Routes>
@@ -55,14 +56,9 @@ export default function App() {
                     <Route path="/dashboard" element={<Dashboard/>}/>
                     {/* <Route path="/dashboard" element={<Dashboard/>}/> */}
                 </Routes>
-                <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100%' }}>
-                  <div style={{ flexGrow: 1 }}>
-                  </div>
+                    </main>
                    <Footers />
-              </div>
-            </div>
-        
-
+                   </div>
         </Router>
         </QueryClientProvider>
     </WagmiConfig>
