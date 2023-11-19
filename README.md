@@ -1,90 +1,94 @@
-# Hardhat Boilerplate
+# TrueVisions - Certifying Charitable Donations with Blockchain Technology
 
-This repository contains a sample project that you can use as the starting point
-for your Ethereum project. It's also a great fit for learning the basics of
-smart contract development.
+## Overview
+TrueVisions is a blockchain-based platform designed to revolutionize charitable donations. It provides a transparent and efficient process where every donation is not only traceable but also certified. Once the liquidity pool is unlocked following donor verification that invoices and quotes comply, TrueVisions ensures that donations are explicitly used for the intended charitable works. This system offers donors, be they individuals or businesses, concrete proof of their contributions.
 
-This project is intended to be used with the
-[Hardhat Beginners Tutorial](https://hardhat.org/tutorial), but you should be
-able to follow it by yourself by reading the README and exploring its
-`contracts`, `tests`, `scripts` and `frontend` directories.
+## Key Technologies
+- Blockchain: Ethereum, Hardhat, Ethers.
+- Oracles: Chainlink with CCIP for real-time data verification.
+- Frontend: ReactJS with Tailwind for styling.
+- Backend: NestJS, Node.js for robust API services.
+- Storage: IPFS - Lighthouse for decentralized storage of proofs like PDFs and images.
+- Wallet Integration: WalletConnect for secure wallet interactions.
+- Languages: TypeScript, JavaScript for comprehensive and scalable development.
+- Support for Unicef: Directly aiding a globally recognized charitable organization.
 
-## Quick start
+## Features
+- Certified Transactions: Ensuring donations are used as intended with transparent blockchain recording.
+- Donor Verification: Liquidity pool unlocked after donors confirm compliance of invoices and quotes.
+- Proof of Donation: Providing tangible evidence for donors.
+- Smart Contracts: Automated, secure distribution of funds.
+- Data Integrity: Real-time data verification with Chainlink oracles.
+- Secure Storage: Decentralized storage for transaction proofs.
 
-The first things you need to do are cloning this repository and installing its
-dependencies:
+## Future Plans
+DAO Implementation: A system of decentralized autonomous organization (DAO) for decision-making regarding quotes and invoices
 
-```sh
-git clone https://github.com/NomicFoundation/hardhat-boilerplate.git
-cd hardhat-boilerplate
-npm install
+## Getting Started
+
+### Prerequisites
+- Docker
+- Node.js
+- Yarn or npm
+- Git
+
+### Setting Up the Backend
+
+1. Clone the backend repository:
+```
+git clone https://github.com/lyeslimani/ethglobalbackend.git
 ```
 
-Once installed, let's run Hardhat's testing network:
-
-```sh
-npx hardhat node
+2. Navigate to the cloned directory:
+```
+cd ethglobalbackend
 ```
 
-Then, on a new terminal, go to the repository's root folder and run this to
-deploy your contract:
+3. Start the services using Docker Compose:
+```
+docker-compose up -d
+```
+4. Execute migrations (after ensuring the services are up and running):
+```
+yarn migration:run
+```
 
-```sh
+Running Hardhat for Blockchain Interactions
+Navigate to the Hardhat directory:
+```
+cd path/to/hardhat
+```
+Run tests to ensure everything is set up correctly:
+```
+npx hardhat test
+```
+Deploy smart contracts:
+```
 npx hardhat run scripts/deploy.js --network localhost
 ```
+This will generate an ABI in the ./client directory.
 
-Finally, we can run the frontend with:
+## Starting the Frontend Application
 
-```sh
-cd frontend
-npm install
-npm start
+Navigate to the ./client directory:
+```
+cd path/to/client
+```
+Install dependencies:
+```
+yarn install
+```
+Start the React application:
+```
+yarn start
 ```
 
-Open [http://localhost:3000/](http://localhost:3000/) to see your Dapp. You will
-need to have [Coinbase Wallet](https://www.coinbase.com/wallet) or [Metamask](https://metamask.io) installed and listening to
-`localhost 8545`.
+## Additional Resources
+Smart Contract Development: Access our smart contracts on Remix for further exploration and testing: Remix Ethereum - TokenTransferor.sol 
+> https://remix.ethereum.org/#url=https://docs.chain.link/samples/CCIP/TokenTransferor.sol&lang=en&optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.19+commit.7dd6d404.js
 
-## User Guide
+## Social Impact
+TrueVisions is committed to redefining charitable giving, making it more transparent and impactful, and fostering a trustworthy philanthropic environment, with special support for Unicef.
 
-You can find detailed instructions on using this repository and many tips in [its documentation](https://hardhat.org/tutorial).
-
-- [Writing and compiling contracts](https://hardhat.org/tutorial/writing-and-compiling-contracts/)
-- [Setting up the environment](https://hardhat.org/tutorial/setting-up-the-environment/)
-- [Testing Contracts](https://hardhat.org/tutorial/testing-contracts/)
-- [Setting up your wallet](https://hardhat.org/tutorial/boilerplate-project#how-to-use-it)
-- [Hardhat's full documentation](https://hardhat.org/docs/)
-
-For a complete introduction to Hardhat, refer to [this guide](https://hardhat.org/getting-started/#overview).
-
-## What's Included?
-
-This repository uses our recommended hardhat setup, by using our [`@nomicfoundation/hardhat-toolbox`](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-toolbox). When you use this plugin, you'll be able to:
-
-- Deploy and interact with your contracts using [ethers.js](https://docs.ethers.io/v5/) and the [`hardhat-ethers`](https://hardhat.org/hardhat-runner/plugins/nomiclabs-hardhat-ethers) plugin.
-- Test your contracts with [Mocha](https://mochajs.org/), [Chai](https://chaijs.com/) and our own [Hardhat Chai Matchers](https://hardhat.org/hardhat-chai-matchers) plugin.
-- Interact with Hardhat Network with our [Hardhat Network Helpers](https://hardhat.org/hardhat-network-helpers).
-- Verify the source code of your contracts with the [hardhat-etherscan](https://hardhat.org/hardhat-runner/plugins/nomiclabs-hardhat-etherscan) plugin.
-- Get metrics on the gas used by your contracts with the [hardhat-gas-reporter](https://github.com/cgewecke/hardhat-gas-reporter) plugin.
-- Measure your tests coverage with [solidity-coverage](https://github.com/sc-forks/solidity-coverage).
-
-This project also includes [a sample frontend/Dapp](./frontend), which uses [Create React App](https://github.com/facebook/create-react-app).
-
-## Troubleshooting
-
-- `Invalid nonce` errors: if you are seeing this error on the `npx hardhat node`
-  console, try resetting your Metamask account. This will reset the account's
-  transaction history and also the nonce. Open Metamask, click on your account
-  followed by `Settings > Advanced > Clear activity tab data`.
-
-## Setting up your editor
-
-[Hardhat for Visual Studio Code](https://hardhat.org/hardhat-vscode) is the official Hardhat extension that adds advanced support for Solidity to VSCode. If you use Visual Studio Code, give it a try!
-
-## Getting help and updates
-
-If you need help with this project, or with Hardhat in general, please read [this guide](https://hardhat.org/hardhat-runner/docs/guides/getting-help) to learn where and how to get it.
-
-For the latest news about Hardhat, [follow us on Twitter](https://twitter.com/HardhatHQ), and don't forget to star [our GitHub repository](https://github.com/NomicFoundation/hardhat)!
-
-**Happy _building_!**
+## Summary
+TrueVisions leverages cutting-edge blockchain and web technologies to transform the landscape of charitable donations, ensuring transparency, security, and enhanced impact in philanthropy.
