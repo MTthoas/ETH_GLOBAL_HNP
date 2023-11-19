@@ -1,9 +1,9 @@
-import {useState} from "react";
+import React, {useState} from "react";
 import {useAccount, useMutation} from "wagmi";
 import {createProject} from "./api.ts";
 import {useNavigate} from "react-router-dom";
 import toast from "react-hot-toast";
-import LoadingButton from "../LoadingButtonà.tsx";
+import LoadingButton from "../LoadingButton.tsx";
 
 
 function CreateProject() {

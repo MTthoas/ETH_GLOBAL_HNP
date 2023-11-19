@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from 'react-query';
-import { getProjectInfos } from './api';
+import {getProjectInfos, shortenString} from './api';
 import Loading from '../Loading';
 import Love from '../../assets/love.png';
 
@@ -56,7 +56,8 @@ const ProjectPage = () => {
                             <div className="p-5">
                                 <p className="text-lg font-semibold text-gray-800">${"100"} of ${data.amount} goal</p>
                                 <div className="w-full bg-gray-light rounded-full h-2.5 dark:bg-gray-700">
-                                <div className="bg-green h-2.5 rounded-full" style={{ width: `${(100 / 1000) * 100}%` }}></div>
+                                    <div className="bg-green h-2.5 rounded-full"
+                                         style={{width: `${(100 / data.amount) * 100}%`}}></div>
                                 </div>
                                 <p className="text-gray-600 mt-2">{"1500"} donors</p>
                             </div>
@@ -165,7 +166,7 @@ const ProjectPage = () => {
                             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                                     <a href={`https://gateway.lighthouse.storage/ipfs/${data.justification_file_hash}`}
-                                       target={"_blank"}>{`https://gateway.lighthouse.storage/ipfs/${data.justification_file_hash})`}</a>
+                                       target={"_blank"}>{shortenString(`https://gateway.lighthouse.storage/ipfs/${data.justification_file_hash}`, 40)}</a>
                                 </th>
                                 <td className="px-6 py-4">
                                     12kb

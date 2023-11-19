@@ -50,3 +50,11 @@ export const createProject = async (dto: any) => {
     return response.data;
 }
 
+export function shortenString(input: string, maxLength: number): string {
+    if (input.length <= maxLength) {
+        return input;
+    } else {
+        return input.slice(0, maxLength - 3) + '...';
+    }
+}
+
