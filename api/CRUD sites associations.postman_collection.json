@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "fbb076b9-6934-4383-a327-0f95f2177a49",
+		"name": "CRUD sites associations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20851886",
+		"_collection_link": "https://bold-space-361446.postman.co/workspace/d010a6c1-924d-4534-84b4-2f8c0df1e0cf/collection/20851886-fbb076b9-6934-4383-a327-0f95f2177a49?action=share&creator=20851886&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "get asssociartions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{host}}/organizations",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"organizations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create organization",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Unicef\",\r\n    \"website\":\"https://www.unicef.org/\",\r\n    \"address\":\"0xf3f666211E84174Bc3e815452c56a49D87744efd\",\r\n    \"description\":\"UNICEF (United Nations International Children's Emergency Fund) is an international organization dedicated to improving the lives of children worldwide. Established in 1946, UNICEF operates in over 190 countries and territories to ensure the survival, protection, and development of every child. Our mission is to address the fundamental needs of children, with a special focus on the most vulnerable and marginalized. On our website, you can explore how UNICEF collaborates with local, national, and international partners to provide quality education, essential healthcare, proper nutrition, and protection against violence, exploitation, and discrimination. We are committed to advocating for children's rights, ensuring that every child has the opportunity to grow up healthy, educated, and safe. Navigate through our site to learn more about our programs, projects, partnerships, and how you can contribute to our mission. Together, let's work towards a world where every child has the chance to fulfill their potential and lead a fulfilling life.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/organizations",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"organizations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modify association",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Unicef la bruja\",\r\n    \"website\":\"https://www.unicef.org/\",\r\n    \"address\":\"0xf3f666211E84174Bc3e815452c56a49D87744efd\",\r\n    \"description\":\"Donc en fait la tu fais ta vie tavu\",\r\n    \"logo\":\"public/\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/organizations/:id",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"organizations",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get projects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/project",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create Project",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Puits en Angola\",\r\n    \"youtubeVideoId\":\"https://www.unicef.org/\",\r\n    \"address\":\"0xf3f666211E84174Bc3e815452c56a49D87744efd\",\r\n    \"description\":\"Donc en fait la tu fais ta vie tavu\",\r\n    \"organizationAddress\":\"0xf3f666211E84174Bc3e815452c56a49D87744efd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/project",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modifyProject",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Puits en Angolasssspocbkz\",\r\n    \"youtubeVideoId\":\"https://www.unicef.org/\",\r\n    \"address\":\"0xf3f666211E84174Bc3e815452c56a49D87744efd\",\r\n    \"description\":\"Donc en fait la tu fais ta vie tavu\",\r\n    \"organizationAddress\":\"0xf3f666211E84174Bc3e815452c56a49D87744efd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/project/:id",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"project",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get asssociartion by address",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/organizations/:address",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"organizations",
+						":address"
+					],
+					"variable": [
+						{
+							"key": "address",
+							"value": "0xf3f666211E84174Bc3e815452c56a49D87744efd"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modifyProject Copy",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Puits en Angolassss\",\r\n    \"youtubeVideoId\":\"https://www.unicef.org/\",\r\n    \"address\":\"0xf3f666211E84174Bc3e815452c56a49D87744efd\",\r\n    \"description\":\"Donc en fait la tu fais ta vie tavu\",\r\n    \"organizationAddress\":\"0xf3f666211E84174Bc3e815452c56a49D87744efd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/project/:id",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"project",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/organizations/0xCd023dC29301D8a815677c456b7Be9de935e48bb\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"organizations",
+						"0xCd023dC29301D8a815677c456b7Be9de935e48bb\n"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
